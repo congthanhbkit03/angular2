@@ -1,0 +1,20 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Created at</th>
+			<th>Name</th>
+			<th>Avatar</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let em of employees">
+			<td>{{em.id}}</td>
+			<td>{{em.createAt}}</td>
+			<td>{{em.name}}</td>
+			<td> 
+				<img src="{{em.avatar}}" alt="">				
+			</td>
+		</tr>
+	</tbody>
+</table>

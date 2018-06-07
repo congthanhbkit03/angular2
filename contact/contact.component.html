@@ -1,0 +1,42 @@
+<div class="container">
+	<form action="" #userForm="ngForm" method="POST" (ngSubmit)="onSubmit(userForm.value)" role="form">
+		<legend>User FORM</legend>
+
+		<div class="form-group">
+			<label for="">Name</label>
+			<input type="text" minlength="6" maxlength="10" required class="form-control" name="name" #name="ngModel" ngModel>
+			<div *ngIf="name.errors" class="label label-danger">
+				Name is required
+				
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="">Email</label>
+			<input type="text" class="form-control" name="email"  ngModel>
+		</div>
+		<div class="form-group">
+			<label for="">Street</label>
+			<input type="text" class="form-control" name="street" #street ngModel>
+		</div>
+		<div class="form-group">
+			<label for="">City</label>
+			
+			<select name="city" class="form-control" required ngModel>
+				<option *ngFor="let c of cities" value={{c.id}}>{{c.name}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="">PostalCode</label>
+			<input type="text" pattern="^[1-9][0-9]{4}$" class="form-control" name="pc" #postalcode="ngModel" ngModel>
+			<div *ngIf="postalcode.errors" class="label label-danger">
+				<div [hidden]="!postalcode.errors.pattern">
+					Postalcode must have 5 digits
+				</div>
+			</div>
+		</div>
+
+		
+
+		<button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Submit</button>
+	</form>
+</div>
