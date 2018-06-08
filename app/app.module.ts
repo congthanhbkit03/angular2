@@ -8,10 +8,11 @@ import { ContactComponent } from './contact/contact.component';
 import { EmployListComponent } from './employ-list/employ-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TutorialComponent, ContactComponent, EmployListComponent, HomeComponent
+    AppComponent, TutorialComponent, ContactComponent, EmployListComponent, HomeComponent, NotFoundComponent
   ],
   imports: [
     BrowserModule,
