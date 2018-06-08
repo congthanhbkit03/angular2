@@ -6,15 +6,18 @@ import { AppComponent } from './app.component';
 import { TutorialComponent } from './tutorial.component';
 import { ContactComponent } from './contact/contact.component';
 import { EmployListComponent } from './employ-list/employ-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TutorialComponent, ContactComponent, EmployListComponent
+    AppComponent, TutorialComponent, ContactComponent, EmployListComponent, HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
