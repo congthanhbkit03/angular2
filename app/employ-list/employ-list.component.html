@@ -22,3 +22,9 @@
 		</tr>
 	</tbody>
 </table>
+<ul class="pagination">
+	<li><a href="#">&laquo;</a></li>
+	<li *ngFor="let page of pages"><a routerLink="/employlist" [queryParams]="{pageNumber:page}">{{page}}</a></li>
+	
+	<li><a href="#">&raquo;</a></li>
+</ul>
