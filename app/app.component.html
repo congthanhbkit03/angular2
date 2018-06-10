@@ -182,11 +182,13 @@
 				<li>
                   <a routerLink="" routerLinkActive="active">Home</a>
                 </li>
-                <li>
-                  <a routerLink="employlist" routerLinkActive="active">Shop</a>
+                <li>                  <a routerLink="employlist" routerLinkActive="active">Employees List</a>
                 </li>
                 <li>
-                  <a href="about.html">About</a>
+                  <a routerLink="login" routerLinkActive="active">Login</a>
+                </li>
+                <li>
+                  <a (click) = "logOut()">Logout</a>
                 </li>
               </ul>
           	</div>

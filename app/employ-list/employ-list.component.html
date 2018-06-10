@@ -5,6 +5,7 @@
 			<th>Created at</th>
 			<th>Name</th>
 			<th>Avatar</th>
+			<th>Detail</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,6 +15,9 @@
 			<td>{{em.name}}</td>
 			<td> 
 				<img src="{{em.avatar}}" alt="">				
+			</td>
+			<td>
+				<a [routerLink]="['/employee-detail', em.id]">Detail</a>
 			</td>
 		</tr>
 	</tbody>

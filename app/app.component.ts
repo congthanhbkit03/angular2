@@ -1,29 +1,25 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { TutorialComponent} from './tutorial.component';
+import { LoginService } from './services/login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'XIn chao den voi Ang2';
-  
-  public agree:number = 0;
-  public disgree:number = 0;
+  public isLoggin: boolean;
 
-  public names = ['Mr A', 'Mr B', 'Mr C', 'Md D'];
-  public parentVote(agree:boolean){
-  	if(agree){
-  		this.agree++;
-  	} else {
-  		this.disgree++;
-  	}
+  constructor(private logginService: LoginService){
+
+  }
+  
+  ngOnInit(){
+      this.isLoggin = this.logginService.isLogged();
   }
 
-  @ViewChild(TutorialComponent)
-  public tutor: TutorialComponent;
-
-  public changeName(){
-  	this.tutor.setName('Bui COng THanh test test view child');
+  public logOut(){
+      this.logginService.setLoggin(false);
+      console.log("Log Out");
   }
 }
